@@ -41,6 +41,13 @@ dist:
 install:
 	go install $(LDFLAGS)
 
+.PHONY: watch
+watch:
+ifeq ($(shell command -v looper 2> /dev/null),)
+	go get -u github.com/nathany/looper
+endif
+	looper
+
 .PHONY: release
 release:
 	git tag $(VERSION)
