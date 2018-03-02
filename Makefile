@@ -48,6 +48,10 @@ ifeq ($(shell command -v looper 2> /dev/null),)
 endif
 	looper
 
+.PHONY: run
+run:
+	go run server.go
+
 .PHONY: release
 release:
 	git tag $(VERSION)

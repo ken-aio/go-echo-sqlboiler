@@ -2,12 +2,14 @@ package route
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/ken-aio/go-echo-sqlboiler/api/v1"
 	"github.com/ken-aio/go-echo-sqlboiler/middleware"
 	"github.com/labstack/echo"
 )
 
+// Init initialize echo application
 func Init() *echo.Echo {
 	e := echo.New()
 
@@ -18,6 +20,11 @@ func Init() *echo.Echo {
 	// Routing
 	e.GET("/routes", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, e.Routes())
+	})
+	// ping
+	e.GET("/ping", func(c echo.Context) error {
+		resp := map[string]time.Time{"pong": time.Now()}
+		return c.JSON(http.StatusOK, resp)
 	})
 
 	apiV1 := e.Group("api/v1")
