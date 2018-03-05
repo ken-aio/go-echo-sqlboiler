@@ -1,64 +1,64 @@
 
 
-/* Create Tables */
+/* create tables */
 
-CREATE TABLE GROUPS
+create table groups
 (
-	ID BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
-	NAME VARCHAR(255) NOT NULL COMMENT '名前',
-	CREATED_AT DATETIME NOT NULL COMMENT '登録日時',
-	CREATED_BY VARCHAR(64) NOT NULL COMMENT '登録トレース',
-	UPDATED_AT DATETIME NOT NULL COMMENT '更新日時',
-	UPDATED_BY VARCHAR(64) NOT NULL COMMENT '更新トレース',
-	PRIMARY KEY (ID)
-) COMMENT = 'グループ';
+	id bigint unsigned not null auto_increment comment 'id',
+	name varchar(255) not null comment '名前',
+	created_at datetime not null comment '登録日時',
+	created_by varchar(64) not null comment '登録トレース',
+	updated_at datetime not null comment '更新日時',
+	updated_by varchar(64) not null comment '更新トレース',
+	primary key (id)
+) comment = 'グループ';
 
 
-CREATE TABLE GROUP_MEMBERS
+create table group_members
 (
-	ID BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
-	IS_ADMIN BOOLEAN NOT NULL COMMENT '管理者か',
-	USER_ID BIGINT UNSIGNED NOT NULL COMMENT 'user_id',
-	GROUP_ID BIGINT UNSIGNED NOT NULL COMMENT 'グループID',
-	CREATED_AT DATETIME NOT NULL COMMENT '登録日時',
-	CREATED_BY VARCHAR(64) NOT NULL COMMENT '登録トレース',
-	UPDATED_AT DATETIME NOT NULL COMMENT '更新日時',
-	UPDATED_BY VARCHAR(64) NOT NULL COMMENT '更新トレース',
-	PRIMARY KEY (ID)
-) COMMENT = 'グループメンバー';
+	id bigint unsigned not null auto_increment comment 'id',
+	is_admin boolean not null comment '管理者か',
+	user_id bigint unsigned not null comment 'user_id',
+	group_id bigint unsigned not null comment 'グループid',
+	created_at datetime not null comment '登録日時',
+	created_by varchar(64) not null comment '登録トレース',
+	updated_at datetime not null comment '更新日時',
+	updated_by varchar(64) not null comment '更新トレース',
+	primary key (id)
+) comment = 'グループメンバー';
 
 
-CREATE TABLE USERS
+create table users
 (
-	ID BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'id',
-	NAME VARCHAR(255) NOT NULL COMMENT '名前',
-	BIRTHDATE DATE COMMENT '誕生日',
-	GENDER VARCHAR(10) NOT NULL COMMENT '性別 : 男: male
+	id bigint unsigned not null auto_increment comment 'id',
+	name varchar(255) not null comment '名前',
+	birthdate date comment '誕生日',
+	gender varchar(10) not null comment '性別 : 男: male
 女: female',
-	CREATED_AT DATETIME NOT NULL COMMENT '登録日時',
-	CREATED_BY VARCHAR(64) NOT NULL COMMENT '登録トレース',
-	UPDATED_AT DATETIME NOT NULL COMMENT '更新日時',
-	UPDATED_BY VARCHAR(64) NOT NULL COMMENT '更新トレース',
-	PRIMARY KEY (ID)
-) COMMENT = 'users';
+	created_at datetime not null comment '登録日時',
+	created_by varchar(64) not null comment '登録トレース',
+	updated_at datetime not null comment '更新日時',
+	updated_by varchar(64) not null comment '更新トレース',
+	primary key (id)
+) comment = 'users';
 
 
 
-/* Create Foreign Keys */
+/* create foreign keys */
 
-ALTER TABLE GROUP_MEMBERS
-	ADD CONSTRAINT FK_GROUP_MEMBERS_GROUPS FOREIGN KEY (GROUP_ID)
-	REFERENCES GROUPS (ID)
-	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
+alter table group_members
+	add constraint fk_group_members_groups foreign key (group_id)
+	references groups (id)
+	on update restrict
+	on delete restrict
 ;
 
 
-ALTER TABLE GROUP_MEMBERS
-	ADD CONSTRAINT FK_GROUP_MEMBERS_USERS FOREIGN KEY (USER_ID)
-	REFERENCES USERS (ID)
-	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
+alter table group_members
+	add constraint fk_group_members_users foreign key (user_id)
+	references users (id)
+	on update restrict
+	on delete restrict
 ;
 
 

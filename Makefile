@@ -85,4 +85,5 @@ gen: rs
 ifeq ($(shell command -v sqlboiler 2> /dev/null),)
 	go get -u github.com/volatiletech/sqlboiler
 endif
+	cp sqlboiler.toml app/infra/
 	sqlboiler mysql
