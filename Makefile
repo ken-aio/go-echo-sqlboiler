@@ -51,13 +51,16 @@ endif
 .PHONY: swag
 swag:
 ifeq ($(shell command -v swag 2> /dev/null),)
-	go get github.com/swaggo/swag/cmd/swag
+	go get -u github.com/swaggo/swag/cmd/swag
 endif
 	looper
 
 .PHONY: run
 run:
-	go run server.go
+ifeq ($(shell command -v gin 2> /dev/null),)
+	go get -u github.com/codegangsta/gin
+endif
+	gin run main.go
 
 .PHONY: release
 release:
