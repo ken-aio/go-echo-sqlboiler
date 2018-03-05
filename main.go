@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/ken-aio/go-echo-sqlboiler/app/routes"
 	_ "github.com/ken-aio/go-echo-sqlboiler/docs"
-	"github.com/ken-aio/go-echo-sqlboiler/src/route"
 )
 
 // @title Go Echo SQLBoiler sample project
@@ -19,6 +19,6 @@ import (
 // @host localhost:1314
 // @BasePath /
 func main() {
-	e := route.Init()
+	e := routes.Init()
 	e.Logger.Fatal(e.Start(":1313"))
 }

@@ -3,7 +3,7 @@ package v1
 import (
 	"net/http"
 
-	"github.com/ken-aio/go-echo-sqlboiler/src/models"
+	"github.com/ken-aio/go-echo-sqlboiler/app/models"
 	"github.com/labstack/echo"
 )
 
