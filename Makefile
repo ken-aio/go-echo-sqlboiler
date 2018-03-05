@@ -48,6 +48,13 @@ ifeq ($(shell command -v looper 2> /dev/null),)
 endif
 	looper
 
+.PHONY: swag
+swag:
+ifeq ($(shell command -v swag 2> /dev/null),)
+	go get github.com/swaggo/swag/cmd/swag
+endif
+	looper
+
 .PHONY: run
 run:
 	go run server.go

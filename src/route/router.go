@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/ken-aio/go-echo-sqlboiler/api/v1"
-	"github.com/ken-aio/go-echo-sqlboiler/middleware"
+	"github.com/ken-aio/go-echo-sqlboiler/src/handler/v1"
+	"github.com/ken-aio/go-echo-sqlboiler/src/middleware"
 	"github.com/labstack/echo"
 )
 
