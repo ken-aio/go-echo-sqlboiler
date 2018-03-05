@@ -1,0 +1,11 @@
+
+* * * * * * * * * *
+*                 *
+* Tsv Data Result *
+*                 *
+* * * * * * * * * *
+data-directory: playsql/data/ut/tsv/UTF-8
+
+00100-users.tsv (1)
+00200-groups.tsv (1)
+00300-group_members.tsv (1)

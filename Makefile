@@ -74,3 +74,15 @@ cross-build: deps
 			GOOS=$$os GOARCH=$$arch CGO_ENABLED=0 go build $(LDFLAGS) -o dist/$$os-$$arch/$(NAME); \
 		done; \
 	done
+
+.PHONY: rs
+rs:
+	cp db/modeling/sampledb.sql db/tools/dbflute_sampledb/playsql/replace-schema-10.sql
+	sh db/tools/dbflute_sampledb/manage.sh 0
+
+.PHONY: gen
+gen: rs
+ifeq ($(shell command -v sqlboiler 2> /dev/null),)
+	go get -u github.com/volatiletech/sqlboiler
+endif
+	sqlboiler mysql

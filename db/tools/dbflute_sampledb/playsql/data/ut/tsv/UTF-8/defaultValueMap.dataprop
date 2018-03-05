@@ -1,0 +1,6 @@
+map:{
+    ; created_at = sysdate
+    ; created_by = ReplaceSchema
+    ; updated_at = sysdate
+    ; updated_by = ReplaceSchema
+}

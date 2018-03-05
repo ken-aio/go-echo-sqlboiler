@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example.go-echo-sqlboiler</groupId>
+  <artifactId>sample</artifactId>
+  <version>1.0.0</version>
+  <properties>
+    <dbflute.version>1.1.6</dbflute.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.dbflute</groupId>
+      <artifactId>dbflute-runtime</artifactId>
+      <version>${dbflute.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.45</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.dbflute</groupId>
+        <artifactId>dbflute-maven-plugin</artifactId>
+        <version>1.1.0</version>
+        <configuration>
+          <clientProject>sampledb</clientProject>
+          <packageBase>com.example.go-echo-sqlboiler</packageBase>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
