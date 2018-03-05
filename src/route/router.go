@@ -7,6 +7,8 @@ import (
 	"github.com/ken-aio/go-echo-sqlboiler/src/handler/v1"
 	"github.com/ken-aio/go-echo-sqlboiler/src/middleware"
 	"github.com/labstack/echo"
+
+	"github.com/swaggo/echo-swagger"
 )
 
 // Init initialize echo application
@@ -17,7 +19,9 @@ func Init() *echo.Echo {
 
 	middleware.Init(e)
 
-	// Routing
+	// swagger
+	e.GET("/swagger/*", echoSwagger.WrapHandler)
+
 	e.GET("/routes", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, e.Routes())
 	})

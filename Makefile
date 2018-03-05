@@ -53,14 +53,14 @@ swag:
 ifeq ($(shell command -v swag 2> /dev/null),)
 	go get -u github.com/swaggo/swag/cmd/swag
 endif
-	looper
+	swag i
 
 .PHONY: run
 run:
 ifeq ($(shell command -v gin 2> /dev/null),)
 	go get -u github.com/codegangsta/gin
 endif
-	gin run main.go
+	gin -a 1313 -p 1314 -i --notifications run main.go
 
 .PHONY: release
 release:

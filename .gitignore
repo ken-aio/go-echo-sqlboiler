@@ -30,3 +30,4 @@ _testmain.go
 *.out
 /vendor
 /coverage.txt
+gin-bin
