@@ -40,6 +40,13 @@ func Init() *echo.Echo {
 			users.PUT("/:id", v1.UserUpdate)
 			users.DELETE("/:id", v1.UserDelete)
 		}
+		groups := apiV1.Group("/groups")
+		{
+			mems := groups.Group("/:group_id/members")
+			{
+				mems.GET("", v1.GroupMemberList)
+			}
+		}
 	}
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")

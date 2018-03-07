@@ -36,3 +36,11 @@
 [[constraint]]
   branch = "master"
   name = "github.com/swaggo/echo-swagger"
+
+[[constraint]]
+  name = "github.com/sirupsen/logrus"
+  version = "1.0.4"
+
+[[constraint]]
+  name = "github.com/k0kubun/pp"
+  version = "2.3.0"

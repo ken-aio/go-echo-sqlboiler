@@ -84,6 +84,12 @@
   revision = "23c074d0eceb2b8a5bfdbb271ab780cde70f05a8"
 
 [[projects]]
+  name = "github.com/k0kubun/pp"
+  packages = ["."]
+  revision = "027a6d1765d673d337e687394dbe780dd64e2a1e"
+  version = "v2.3.0"
+
+[[projects]]
   name = "github.com/kat-co/vala"
   packages = ["."]
   revision = "bfe9b50e828ad56312e486cbf4165ff1ac3a9bae"
@@ -263,8 +269,8 @@
     "strmangle",
     "types"
   ]
-  revision = "6b95e5d3d7840a737841e2eb446e1c82641f8393"
-  version = "v2.6.0"
+  revision = "7e0eca627f995e2476d637ada0c3b70ecb5d837c"
+  version = "v2.6.1"
 
 [[projects]]
   branch = "master"
@@ -274,7 +280,7 @@
     "acme/autocert",
     "md4"
   ]
-  revision = "49796115aa4b964c318aad4f3084fdb41e9aa067"
+  revision = "85f98707c97e11569271e4d9b3d397e079c4f4d0"
 
 [[projects]]
   branch = "master"
@@ -285,13 +291,13 @@
     "webdav",
     "webdav/internal/xml"
   ]
-  revision = "22ae77b79946ea320088417e4d50825671d82d57"
+  revision = "d25186b37f34ebdbbea8f488ef055638dfab272d"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "f6cff0780e542efa0c8e864dc8fa522808f6a598"
+  revision = "dd2ff4accc098aceecb86b36eaa7829b2a17b1c9"
 
 [[projects]]
   name = "golang.org/x/text"
@@ -333,6 +339,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "05109a5bc77553e7b77f52fc87d5b5607d42b4fe3bec9021d6dbd7c157b69d13"
+  inputs-digest = "159970550a89bf2dcfcc6863a153da9d29b5df6cbac96d31b0fb7b6e00b68e62"
   solver-name = "gps-cdcl"
   solver-version = 1
